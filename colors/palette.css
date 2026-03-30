@@ -1,5 +1,9 @@
 /* C三NETEX Brand Palette */
 :root {
+  /* Logo / Mark */
+  --cx-paper: #f8f7f5;
+  --cx-mark: #090808;
+
   /* Backgrounds */
   --cx-bg: #020617;
   --cx-surface: #0f172a;

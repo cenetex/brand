@@ -27,21 +27,29 @@ The mark is the character 三 rendered as three horizontal black bars on a white
 
 ## Colors
 
-### Primary Palette
+### Logo Colors (extracted from mark)
 
 | Name | Hex | RGB | Use |
 |------|-----|-----|-----|
-| Slate 950 | `#020617` | 2, 6, 23 | Backgrounds |
+| Paper White | `#f8f7f5` | 248, 247, 245 | Logo background, light surfaces |
+| Mark Black | `#090808` | 9, 8, 8 | Logo bars, high-contrast text |
+
+### Digital Palette
+
+| Name | Hex | RGB | Use |
+|------|-----|-----|-----|
+| Slate 950 | `#020617` | 2, 6, 23 | Page backgrounds |
 | Slate 900 | `#0f172a` | 15, 23, 42 | Surfaces, cards |
 | Slate 800 | `#1e293b` | 30, 41, 59 | Borders |
-| Blue 500 | `#3b82f6` | 59, 130, 246 | Primary accent |
+| Blue 500 | `#3b82f6` | 59, 130, 246 | Primary accent, 三 highlight |
 | Blue 400 | `#60a5fa` | 96, 165, 250 | Hover/glow states |
 
 ### Text
 
 | Name | Hex | Use |
 |------|-----|-----|
-| Slate 50 | `#f8fafc` | Primary text |
+| Slate 50 | `#f8fafc` | Primary text (digital) |
+| Paper White | `#f8f7f5` | Primary text (print/logo contexts) |
 | Slate 400 | `#94a3b8` | Secondary/muted text |
 
 ### Effects
