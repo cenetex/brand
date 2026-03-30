@@ -30,7 +30,7 @@ The mark is the character 三 rendered as three horizontal black bars on a white
 
 ## Colors
 
-Both modes are derived from the mark's two real colors. Blue is reserved for links and interactive elements only.
+Both modes are derived from the mark's two real colors. Vermillion is the accent — from the seal stamp (朱印) tradition in East Asian calligraphy. Three ink strokes, one red seal.
 
 ### Brand Anchors
 
@@ -38,7 +38,7 @@ Both modes are derived from the mark's two real colors. Blue is reserved for lin
 |------|-----|--------|
 | Paper | `#f8f7f5` | Mark background — warm off-white |
 | Ink | `#090808` | Mark strokes — warm near-black |
-| Accent | `#3b82f6` | Links, interactive elements, 三 highlight |
+| Vermillion | `#c53d2f` | Accent — seal stamp red, for 三 highlight and interactive elements |
 
 ### Light Mode (default)
 

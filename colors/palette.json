@@ -4,8 +4,8 @@
     "ink": "#090808"
   },
   "accent": {
-    "default": "#3b82f6",
-    "hover": "#2563eb"
+    "default": "#c53d2f",
+    "hover": "#a83227"
   },
   "light": {
     "bg": "#f8f7f5",

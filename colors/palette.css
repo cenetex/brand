@@ -6,9 +6,9 @@
   --cx-paper: #f8f7f5;
   --cx-ink: #090808;
 
-  /* Accent — minimal, for interactive elements only */
-  --cx-accent: #3b82f6;
-  --cx-accent-hover: #2563eb;
+  /* Accent — vermillion, from the seal stamp tradition */
+  --cx-accent: #c53d2f;
+  --cx-accent-hover: #a83227;
 
   /* Typography */
   --cx-font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
