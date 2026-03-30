@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C三NETEX Brand</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: #020617;
+      color: #f8fafc;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container { max-width: 960px; margin: 0 auto; padding: 0 2rem; }
+
+    /* Hero */
+    .hero {
+      min-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 6rem 2rem;
+    }
+
+    .hero-mark {
+      width: 96px;
+      height: 96px;
+      margin-bottom: 2rem;
+      border-radius: 16px;
+      border: 1px solid #1e293b;
+    }
+
+    .hero-name {
+      font-size: 4rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-name .san { color: #3b82f6; }
+
+    .hero-sub {
+      font-size: 1.15rem;
+      color: #94a3b8;
+      max-width: 400px;
+    }
+
+    /* Section */
+    section {
+      padding: 5rem 0;
+      border-top: 1px solid #1e293b;
+    }
+
+    .section-title {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #3b82f6;
+      margin-bottom: 2.5rem;
+    }
+
+    /* Name rules */
+    .name-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .name-card {
+      background: #0f172a;
+      border: 1px solid #1e293b;
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+
+    .name-card.correct { border-color: #22c55e; }
+    .name-card.incorrect { border-color: #ef4444; opacity: 0.6; }
+
+    .name-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #94a3b8;
+      margin-bottom: 0.5rem;
+    }
+
+    .name-label .check { color: #22c55e; }
+    .name-label .cross { color: #ef4444; }
+
+    .name-value {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    /* Logo grid */
+    .logo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .logo-card {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #1e293b;
+      position: relative;
+    }
+
+    .logo-card img {
+      width: 100%;
+      display: block;
+    }
+
+    .logo-card.dark-bg { background: #020617; }
+    .logo-card.light-bg { background: #f8f7f5; }
+    .logo-card.checker-bg {
+      background-image:
+        linear-gradient(45deg, #1e293b 25%, transparent 25%),
+        linear-gradient(-45deg, #1e293b 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #1e293b 75%),
+        linear-gradient(-45deg, transparent 75%, #1e293b 75%);
+      background-size: 16px 16px;
+      background-position: 0 0, 0 8px, 8px -8px, -8px 0px;
+    }
+
+    .logo-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #94a3b8;
+      padding: 0.75rem 1rem;
+      background: #0f172a;
+      border-top: 1px solid #1e293b;
+    }
+
+    /* Colors */
+    .color-row {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .color-row-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #94a3b8;
+      margin-bottom: 0.75rem;
+    }
+
+    .swatch {
+      flex: 1;
+      min-width: 120px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #1e293b;
+    }
+
+    .swatch-color {
+      height: 72px;
+    }
+
+    .swatch-info {
+      padding: 0.75rem 1rem;
+      background: #0f172a;
+    }
+
+    .swatch-name {
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 0.15rem;
+    }
+
+    .swatch-hex {
+      font-size: 0.75rem;
+      color: #94a3b8;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* Typography */
+    .type-sample {
+      background: #0f172a;
+      border: 1px solid #1e293b;
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .type-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #94a3b8;
+      margin-bottom: 1rem;
+    }
+
+    .type-heading {
+      font-size: 2.5rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+    }
+
+    .type-body {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: #94a3b8;
+    }
+
+    .type-code {
+      font-family: 'JetBrains Mono', 'Fira Code', monospace;
+      font-size: 0.9rem;
+      color: #60a5fa;
+    }
+
+    .type-meta {
+      display: flex;
+      gap: 2rem;
+      margin-top: 0.75rem;
+      font-size: 0.7rem;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Voice */
+    .voice-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .voice-card {
+      background: #0f172a;
+      border: 1px solid #1e293b;
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+
+    .voice-do { border-left: 3px solid #22c55e; }
+    .voice-dont { border-left: 3px solid #ef4444; }
+
+    .voice-heading {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.75rem;
+    }
+
+    .voice-do .voice-heading { color: #22c55e; }
+    .voice-dont .voice-heading { color: #ef4444; }
+
+    .voice-text {
+      font-size: 0.95rem;
+      color: #94a3b8;
+      line-height: 1.6;
+    }
+
+    /* Footer */
+    footer {
+      padding: 3rem 0;
+      border-top: 1px solid #1e293b;
+      text-align: center;
+    }
+
+    footer a {
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 0.85rem;
+    }
+
+    footer a:hover { color: #3b82f6; }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .copyright {
+      font-size: 0.75rem;
+      color: #475569;
+    }
+
+    /* Download button */
+    .download-row {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.5rem 1.25rem;
+      background: #0f172a;
+      border: 1px solid #1e293b;
+      border-radius: 8px;
+      color: #f8fafc;
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 500;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .btn:hover {
+      border-color: #3b82f6;
+      box-shadow: 0 0 20px rgba(59, 130, 246, 0.15);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-name { font-size: 2.5rem; }
+      .name-grid, .logo-grid, .voice-grid { grid-template-columns: 1fr; }
+      .color-row { flex-direction: column; }
+      .hero { min-height: 60vh; padding: 4rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <div class="hero">
+    <img src="logos/cenetex-mark-dark.svg" alt="C三NETEX" class="hero-mark">
+    <h1 class="hero-name">C<span class="san">三</span>NETEX</h1>
+    <p class="hero-sub">Brand guidelines and assets</p>
+  </div>
+
+  <div class="container">
+
+    <!-- Name -->
+    <section>
+      <h2 class="section-title">Name</h2>
+      <p style="color: #94a3b8; margin-bottom: 2rem; max-width: 560px;">
+        The first E is replaced by 三 (sān), the Chinese character for three. Always uppercase. Legal entity: Cenetex Inc.
+      </p>
+      <div class="name-grid">
+        <div class="name-card correct">
+          <div class="name-label"><span class="check">&#10003;</span> Correct</div>
+          <div class="name-value">C三NETEX</div>
+        </div>
+        <div class="name-card correct">
+          <div class="name-label"><span class="check">&#10003;</span> ASCII fallback</div>
+          <div class="name-value">CENETEX</div>
+        </div>
+        <div class="name-card incorrect">
+          <div class="name-label"><span class="cross">&#10005;</span> Never</div>
+          <div class="name-value">Cenetex</div>
+        </div>
+        <div class="name-card incorrect">
+          <div class="name-label"><span class="cross">&#10005;</span> Never</div>
+          <div class="name-value">CeNetEx</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Logo -->
+    <section>
+      <h2 class="section-title">Mark</h2>
+      <p style="color: #94a3b8; margin-bottom: 2rem; max-width: 560px;">
+        Three horizontal strokes — 三. Functions as both a standalone symbol and the E in C三NETEX.
+      </p>
+      <div class="logo-grid">
+        <div class="logo-card light-bg">
+          <img src="logos/cenetex-mark.svg" alt="Mark — light">
+          <div class="logo-label">Primary</div>
+        </div>
+        <div class="logo-card dark-bg">
+          <img src="logos/cenetex-mark-dark.svg" alt="Mark — dark">
+          <div class="logo-label">Dark</div>
+        </div>
+        <div class="logo-card checker-bg">
+          <img src="logos/cenetex-mark-transparent.svg" alt="Mark — transparent">
+          <div class="logo-label">Transparent</div>
+        </div>
+      </div>
+      <div class="download-row">
+        <a href="logos/cenetex-mark.svg" download class="btn">SVG Primary</a>
+        <a href="logos/cenetex-mark-dark.svg" download class="btn">SVG Dark</a>
+        <a href="logos/cenetex-mark-transparent.svg" download class="btn">SVG Transparent</a>
+        <a href="logos/cenetex-mark.jpg" download class="btn">JPG</a>
+      </div>
+    </section>
+
+    <!-- Colors -->
+    <section>
+      <h2 class="section-title">Colors</h2>
+
+      <div class="color-row-label">Logo</div>
+      <div class="color-row">
+        <div class="swatch">
+          <div class="swatch-color" style="background: #f8f7f5;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">Paper White</div>
+            <div class="swatch-hex">#f8f7f5</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background: #090808;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">Mark Black</div>
+            <div class="swatch-hex">#090808</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="color-row-label">Surfaces</div>
+      <div class="color-row">
+        <div class="swatch">
+          <div class="swatch-color" style="background: #020617;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">Background</div>
+            <div class="swatch-hex">#020617</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background: #0f172a;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">Surface</div>
+            <div class="swatch-hex">#0f172a</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background: #1e293b;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">Border</div>
+            <div class="swatch-hex">#1e293b</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="color-row-label">Accent</div>
+      <div class="color-row">
+        <div class="swatch">
+          <div class="swatch-color" style="background: #3b82f6;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">Blue 500</div>
+            <div class="swatch-hex">#3b82f6</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background: #60a5fa;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">Blue 400</div>
+            <div class="swatch-hex">#60a5fa</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="color-row-label">Text</div>
+      <div class="color-row">
+        <div class="swatch">
+          <div class="swatch-color" style="background: #f8fafc;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">Primary</div>
+            <div class="swatch-hex">#f8fafc</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background: #94a3b8;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">Muted</div>
+            <div class="swatch-hex">#94a3b8</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Typography -->
+    <section>
+      <h2 class="section-title">Typography</h2>
+      <div class="type-sample">
+        <div class="type-label">Headings</div>
+        <div class="type-heading">We let the agents build this.</div>
+        <div class="type-meta">
+          <span>Inter 800</span>
+          <span>-0.03em tracking</span>
+        </div>
+      </div>
+      <div class="type-sample">
+        <div class="type-label">Body</div>
+        <div class="type-body">AI agents are team members with specific strengths and known limitations. We manage them the same way we'd manage any contributor: clear tasks, honest review, and the judgment to know when to override.</div>
+        <div class="type-meta">
+          <span>Inter 400</span>
+          <span>1.7 line height</span>
+        </div>
+      </div>
+      <div class="type-sample">
+        <div class="type-label">Code</div>
+        <div class="type-code">const agent = await launchTask({ model: 'haiku', repo: 'cenetex/lab' });</div>
+        <div class="type-meta">
+          <span>JetBrains Mono 400</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Voice -->
+    <section>
+      <h2 class="section-title">Voice</h2>
+      <div class="voice-grid">
+        <div class="voice-card voice-do">
+          <div class="voice-heading">Do</div>
+          <div class="voice-text">Direct. No filler words, no preamble. Say what it does, then stop.</div>
+        </div>
+        <div class="voice-card voice-dont">
+          <div class="voice-heading">Don't</div>
+          <div class="voice-text">"We're excited to announce our groundbreaking, industry-leading solution that leverages synergies..."</div>
+        </div>
+        <div class="voice-card voice-do">
+          <div class="voice-heading">Do</div>
+          <div class="voice-text">Honest about limitations. Say what doesn't work alongside what does.</div>
+        </div>
+        <div class="voice-card voice-dont">
+          <div class="voice-heading">Don't</div>
+          <div class="voice-text">"Our AI agents can do anything. They're the future of software development."</div>
+        </div>
+        <div class="voice-card voice-do">
+          <div class="voice-heading">Do</div>
+          <div class="voice-text">Agents are team members. Frame them as tools with strengths and limits.</div>
+        </div>
+        <div class="voice-card voice-dont">
+          <div class="voice-heading">Don't</div>
+          <div class="voice-text">"Our revolutionary autonomous AI workforce will disrupt and transform your business."</div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-links">
+      <a href="https://cenetex.com">cenetex.com</a>
+      <a href="https://lab.cenetex.com">lab</a>
+      <a href="https://github.com/cenetex/brand">github</a>
+    </div>
+    <div class="copyright">&copy; C三NETEX</div>
+  </footer>
+
+</body>
+</html>
