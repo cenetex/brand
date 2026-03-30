@@ -17,7 +17,10 @@ The mark is the character 三 rendered as three horizontal black bars on a white
 
 | File | Format | Use |
 |------|--------|-----|
-| `logos/cenetex-mark.jpg` | JPG | Profile pictures, favicons, small contexts |
+| `logos/cenetex-mark.svg` | SVG | Primary — paper white bg, dark bars |
+| `logos/cenetex-mark-dark.svg` | SVG | Dark backgrounds — slate 950 bg, paper white bars |
+| `logos/cenetex-mark-transparent.svg` | SVG | Overlays — no background, dark bars |
+| `logos/cenetex-mark.jpg` | JPG | Profile pictures, favicons, raster contexts |
 
 ### Usage
 

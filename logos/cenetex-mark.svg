@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <rect width="400" height="400" fill="#f8f7f5"/>
+  <!-- 三 (sān) — top stroke -->
+  <rect x="85" y="76" width="228" height="49" fill="#090808"/>
+  <!-- 三 (sān) — middle stroke -->
+  <rect x="103" y="163" width="193" height="50" fill="#090808"/>
+  <!-- 三 (sān) — bottom stroke -->
+  <rect x="69" y="257" width="261" height="51" fill="#090808"/>
+</svg>
