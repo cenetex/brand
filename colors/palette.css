@@ -1,0 +1,29 @@
+/* C三NETEX Brand Palette */
+:root {
+  /* Backgrounds */
+  --cx-bg: #020617;
+  --cx-surface: #0f172a;
+  --cx-surface-light: #1e293b;
+
+  /* Borders */
+  --cx-border: #1e293b;
+
+  /* Accent */
+  --cx-accent: #3b82f6;
+  --cx-accent-hover: #60a5fa;
+
+  /* Text */
+  --cx-text: #f8fafc;
+  --cx-text-muted: #94a3b8;
+
+  /* Effects */
+  --cx-glow: 0 0 20px rgba(59, 130, 246, 0.15);
+  --cx-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+
+  /* Radius */
+  --cx-radius: 0.75rem;
+
+  /* Typography */
+  --cx-font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --cx-font-mono: 'JetBrains Mono', 'Fira Code', 'Monaco', monospace;
+}
