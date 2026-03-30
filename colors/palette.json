@@ -1,12 +1,30 @@
 {
-  "paper": "#f8f7f5",
-  "mark": "#090808",
-  "background": "#020617",
-  "surface": "#0f172a",
-  "surfaceLight": "#1e293b",
-  "border": "#1e293b",
-  "accent": "#3b82f6",
-  "accentHover": "#60a5fa",
-  "text": "#f8fafc",
-  "textMuted": "#94a3b8"
+  "anchors": {
+    "paper": "#f8f7f5",
+    "ink": "#090808"
+  },
+  "accent": {
+    "default": "#3b82f6",
+    "hover": "#2563eb"
+  },
+  "light": {
+    "bg": "#f8f7f5",
+    "surface": "#ffffff",
+    "border": "#e8e6e3",
+    "borderStrong": "#d4d1cc",
+    "text": "#090808",
+    "textSecondary": "#52504d",
+    "textMuted": "#8a8783",
+    "codeBg": "#f0efed"
+  },
+  "dark": {
+    "bg": "#090808",
+    "surface": "#141313",
+    "border": "#242222",
+    "borderStrong": "#363333",
+    "text": "#f8f7f5",
+    "textSecondary": "#b5b2ae",
+    "textMuted": "#7a7774",
+    "codeBg": "#1a1818"
+  }
 }

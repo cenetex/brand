@@ -1,33 +1,63 @@
 /* C三NETEX Brand Palette */
+
+/* ===== Shared ===== */
 :root {
-  /* Logo / Mark */
+  /* Brand anchors — from the mark */
   --cx-paper: #f8f7f5;
-  --cx-mark: #090808;
+  --cx-ink: #090808;
 
-  /* Backgrounds */
-  --cx-bg: #020617;
-  --cx-surface: #0f172a;
-  --cx-surface-light: #1e293b;
-
-  /* Borders */
-  --cx-border: #1e293b;
-
-  /* Accent */
+  /* Accent — minimal, for interactive elements only */
   --cx-accent: #3b82f6;
-  --cx-accent-hover: #60a5fa;
-
-  /* Text */
-  --cx-text: #f8fafc;
-  --cx-text-muted: #94a3b8;
-
-  /* Effects */
-  --cx-glow: 0 0 20px rgba(59, 130, 246, 0.15);
-  --cx-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
-
-  /* Radius */
-  --cx-radius: 0.75rem;
+  --cx-accent-hover: #2563eb;
 
   /* Typography */
   --cx-font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   --cx-font-mono: 'JetBrains Mono', 'Fira Code', 'Monaco', monospace;
+
+  /* Radius */
+  --cx-radius: 0.5rem;
+}
+
+/* ===== Light Mode (default) ===== */
+:root, [data-theme="light"] {
+  --cx-bg: #f8f7f5;
+  --cx-surface: #ffffff;
+  --cx-border: #e8e6e3;
+  --cx-border-strong: #d4d1cc;
+  --cx-text: #090808;
+  --cx-text-secondary: #52504d;
+  --cx-text-muted: #8a8783;
+  --cx-shadow: 0 1px 3px rgb(0 0 0 / 0.06);
+  --cx-shadow-lg: 0 4px 12px rgb(0 0 0 / 0.08);
+  --cx-code-bg: #f0efed;
+}
+
+/* ===== Dark Mode ===== */
+[data-theme="dark"] {
+  --cx-bg: #090808;
+  --cx-surface: #141313;
+  --cx-border: #242222;
+  --cx-border-strong: #363333;
+  --cx-text: #f8f7f5;
+  --cx-text-secondary: #b5b2ae;
+  --cx-text-muted: #7a7774;
+  --cx-shadow: 0 1px 3px rgb(0 0 0 / 0.3);
+  --cx-shadow-lg: 0 4px 12px rgb(0 0 0 / 0.4);
+  --cx-code-bg: #1a1818;
+}
+
+/* System preference */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --cx-bg: #090808;
+    --cx-surface: #141313;
+    --cx-border: #242222;
+    --cx-border-strong: #363333;
+    --cx-text: #f8f7f5;
+    --cx-text-secondary: #b5b2ae;
+    --cx-text-muted: #7a7774;
+    --cx-shadow: 0 1px 3px rgb(0 0 0 / 0.3);
+    --cx-shadow-lg: 0 4px 12px rgb(0 0 0 / 0.4);
+    --cx-code-bg: #1a1818;
+  }
 }

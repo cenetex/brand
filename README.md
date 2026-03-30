@@ -30,37 +30,45 @@ The mark is the character 三 rendered as three horizontal black bars on a white
 
 ## Colors
 
-### Logo Colors (extracted from mark)
+Both modes are derived from the mark's two real colors. Blue is reserved for links and interactive elements only.
 
-| Name | Hex | RGB | Use |
-|------|-----|-----|-----|
-| Paper White | `#f8f7f5` | 248, 247, 245 | Logo background, light surfaces |
-| Mark Black | `#090808` | 9, 8, 8 | Logo bars, high-contrast text |
+### Brand Anchors
 
-### Digital Palette
+| Name | Hex | Source |
+|------|-----|--------|
+| Paper | `#f8f7f5` | Mark background — warm off-white |
+| Ink | `#090808` | Mark strokes — warm near-black |
+| Accent | `#3b82f6` | Links, interactive elements, 三 highlight |
 
-| Name | Hex | RGB | Use |
-|------|-----|-----|-----|
-| Slate 950 | `#020617` | 2, 6, 23 | Page backgrounds |
-| Slate 900 | `#0f172a` | 15, 23, 42 | Surfaces, cards |
-| Slate 800 | `#1e293b` | 30, 41, 59 | Borders |
-| Blue 500 | `#3b82f6` | 59, 130, 246 | Primary accent, 三 highlight |
-| Blue 400 | `#60a5fa` | 96, 165, 250 | Hover/glow states |
+### Light Mode (default)
 
-### Text
+| Token | Hex | Use |
+|-------|-----|-----|
+| `--cx-bg` | `#f8f7f5` | Page background (= Paper) |
+| `--cx-surface` | `#ffffff` | Cards, elevated elements |
+| `--cx-border` | `#e8e6e3` | Subtle borders |
+| `--cx-border-strong` | `#d4d1cc` | Emphasized borders |
+| `--cx-text` | `#090808` | Primary text (= Ink) |
+| `--cx-text-secondary` | `#52504d` | Secondary text |
+| `--cx-text-muted` | `#8a8783` | Tertiary/muted text |
+| `--cx-code-bg` | `#f0efed` | Code block backgrounds |
 
-| Name | Hex | Use |
-|------|-----|-----|
-| Slate 50 | `#f8fafc` | Primary text (digital) |
-| Paper White | `#f8f7f5` | Primary text (print/logo contexts) |
-| Slate 400 | `#94a3b8` | Secondary/muted text |
+### Dark Mode
 
-### Effects
+| Token | Hex | Use |
+|-------|-----|-----|
+| `--cx-bg` | `#090808` | Page background (= Ink) |
+| `--cx-surface` | `#141313` | Cards, elevated elements |
+| `--cx-border` | `#242222` | Subtle borders |
+| `--cx-border-strong` | `#363333` | Emphasized borders |
+| `--cx-text` | `#f8f7f5` | Primary text (= Paper) |
+| `--cx-text-secondary` | `#b5b2ae` | Secondary text |
+| `--cx-text-muted` | `#7a7774` | Tertiary/muted text |
+| `--cx-code-bg` | `#1a1818` | Code block backgrounds |
 
-| Name | Value | Use |
-|------|-------|-----|
-| Glow | `0 0 20px rgba(59, 130, 246, 0.15)` | Card hover, focus states |
-| Shadow | `0 4px 6px -1px rgb(0 0 0 / 0.3)` | Elevated surfaces |
+### Principle
+
+Dark mode is Ink on Paper inverted. Light mode is Paper on Ink inverted. The two modes are mirrors, not separate palettes. No navy, no slate, no Tailwind generics. Every color is a tint of Paper or Ink.
 
 ## Typography
 
@@ -73,11 +81,10 @@ The mark is the character 三 rendered as three horizontal black bars on a white
 
 ## Voice
 
-- Direct. No filler words, no preamble.
-- Technical but accessible. Explain the what, not the why-you-should-care.
-- Honest about limitations. Say what doesn't work alongside what does.
-- Never use "leverage," "synergy," "ecosystem" (ironic given the codebase), "disruption," or "game-changing."
-- Agents are team members, not magic. Frame them as tools with strengths and limitations.
+- **Direct.** Say what it does, then stop. Every sentence earns its place.
+- **Honest.** Name the limits alongside the strengths. Trust is built by what you admit.
+- **Specific.** Show the work. Code, numbers, outcomes. Concrete over abstract.
+- **Present.** Write about what is, not what could be. If it ships today, say so. If it doesn't, say that too.
 
 ## Digital Presence
 
